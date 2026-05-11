@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+service TemperaturaService {
+
+  rpc GetUltimaLeitura (SensorRequest)
+      returns (TemperaturaResponse);
+
+}
+
+message SensorRequest {
+  string sensorId = 1;
+}
+
+message TemperaturaResponse {
+  string sensorId = 1;
+  double media = 2;
+  double maxima = 3;
+  double minima = 4;
+  string timestamp = 5;
+}
